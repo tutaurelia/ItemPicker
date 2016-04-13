@@ -1,0 +1,38 @@
+<template>
+    <form role="form" class="form-inline">
+        <div class="form-group  col-md-2">
+            <input type="text" value.bind="productIdFilter & debounce:500" class="form-control" placeholder="Search by ProductId">
+        </div>
+        <div class="form-group  col-md-2">
+            <input type="text" value.bind="productNameFilter & debounce:500" class="form-control" placeholder="Search by ProductName">
+        </div>
+        <div class="form-group  col-md-2">
+            <input type="text" value.bind="categoryNameFilter & debounce:500" class="form-control" placeholder="Search by Category">
+        </div>
+        <div class="form-group  col-md-2">
+            <input type="text" value.bind="supplierNameFilter & debounce:500" class="form-control" placeholder="Search by Supplier">
+        </div>
+    </form>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <table class="table table-striped">
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Supplier</th>
+                    <th>Category</th>
+                    <th></th>
+                </tr>
+                <tr repeat.for="product of products">
+                    <td>${product.productId}</td>
+                    <td>${product.productName}</td>
+                    <td>${product.companyName}</td>
+                    <td>${product.categoryName}</td>
+                    <td>
+                        <button class="btn btn-small" click.delegate="pickProduct(product.productId)">Select</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</template>
