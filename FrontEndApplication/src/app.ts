@@ -19,7 +19,7 @@ export class App {
         this.router = router;
         config.title = "Products Dashboard";
         config.map([
-            { route: ["", "dash-board"], moduleId: "./views/dash-board", nav: false },
+            { route: ["", "dash-board"], moduleId: "./views/dash-board", nav: false, name: "dash-board" },
             { route: "change-product-name", moduleId: "./views/change-product-name", nav: false, title: "Change Product Name", name: "change-product-name" },
             { route: "change-category-name", moduleId: "./views/change-category-name", nav: false, title: "Change Category Name", name: "change-category-name" },
             { route: "change-supplier-name", moduleId: "./views/change-supplier-name", nav: false, title: "Change Supplier Name", name: "change-supplier-name" },
